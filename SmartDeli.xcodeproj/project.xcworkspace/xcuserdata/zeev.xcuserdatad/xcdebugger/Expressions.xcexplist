@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ItemCollectionViewController.getDeliInventory(String) -&gt; [inventoryItem]:ItemCollectionViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "storeInventory.loadDeliItems() -&gt; ():Inventory.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CustomerOrder.buldJsonOrder() -&gt; ():order.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "order">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DeliViewController.viewDidLoad() -&gt; ():DeliViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CustomerOrder.appendItem(String, item : productItem) -&gt; ():order.swift">
+      </ContextState>
+      <ContextState
+         contextName = "storeInventory.init(name : String, id : Int) -&gt; storeInventory?:Inventory.swift">
+      </ContextState>
+      <ContextState
+         contextName = "orderViewController.tableView(UITableView, cellForRowAtIndexPath : NSIndexPath) -&gt; UITableViewCell:orderViewConroller.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DeliViewController.unwindToItemList(UIStoryboardSegue) -&gt; ():DeliViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "order">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ItemCollectionViewController.beefInventoryLoad() -&gt; ():ItemCollectionViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ItemCollectionViewController.viewDidLoad() -&gt; ():ItemCollectionViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CustomerOrder.buildDelies() -&gt; ():order.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DeliViewController.prepareForSegue(UIStoryboardSegue, sender : AnyObject?) -&gt; ():DeliViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CustomerOrder.getItemsArrayIndex(String) -&gt; Int:order.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DeliViewController.tableView(UITableView, cellForRowAtIndexPath : NSIndexPath) -&gt; UITableViewCell:DeliViewController.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

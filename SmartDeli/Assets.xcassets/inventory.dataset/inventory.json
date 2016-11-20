@@ -1,0 +1,132 @@
+{
+  "store": {
+    "name": "Rishon",
+    "id": 3,
+    "delies": [
+      {
+        "deliName": "Beef",
+        "deliId":1,
+        "items": [
+          {
+            "itemId":101,
+            "itemName": "T-Bone",
+            "itemPhoto": "tbone"
+          },
+          {
+            "itemId":102,
+            "itemName": "Gound Beef",
+            "itemPhoto": "ground"
+          },
+          {
+            "itemId":103,
+            "itemName": "Fillet",
+            "itemPhoto": "fillet"
+          },
+          {
+            "itemId":104,
+            "itemName": "Osso Bucco",
+            "itemPhoto": "osobucco"
+          }
+        ]
+      },
+      {
+        "deliName": "Cheese",
+        "deliId":2,
+        "items": [
+          {
+            "itemId":201,
+            "itemName": "Mozzarella",
+            "itemPhoto": "mozzarella"
+          },
+          {
+            "itemId":202,
+            "itemName": "Manchego",
+            "itemPhoto": "manchego"
+          },
+          {
+            "itemId":203,
+            "itemName": "Emmental",
+            "itemPhoto": "emmental"
+          },
+          {
+            "itemId":204,
+            "itemName": "Camembert",
+            "itemPhoto": "camembert"
+          },
+          {
+            "itemId":205,
+            "itemName": "Goat Chease",
+            "itemPhoto": "goat"
+          }
+        ]
+      },
+      {
+        "deliName": "Fish",
+        "deliId":3,
+        "items": [
+          {
+            "itemId":301,
+            "itemName": "Salmon",
+            "itemPhoto": "salmon"
+          },
+          {
+            "itemId":302,
+            "itemName": "Sea bass",
+            "itemPhoto": "seebass"
+          },
+          {
+            "itemId":303,
+            "itemName": "Red mullet",
+            "itemPhoto": "redmullet"
+          },
+          {
+            "itemId":304,
+            "itemName": "Tuna",
+            "itemPhoto": "tuna"
+          },
+          {
+            "itemId":305,
+            "itemName": "Carp",
+            "itemPhoto": "carp"
+          }
+        ]
+      },
+      {
+        "deliName": "Poultry",
+        "deliId":4,
+        "items": [
+          {
+            "itemId":401,
+            "itemName": "Ckicken Breast",
+            "itemPhoto": "breast"
+          },
+          {
+            "itemId":402,
+            "itemName": "Ckicken thigh",
+            "itemPhoto": "thigh"
+          },
+          {
+            "itemId":403,
+            "itemName": "Chicken wings",
+            "itemPhoto": "wings"
+          },
+          {
+            "itemId":404,
+            "itemName": "Liver",
+            "itemPhoto": "liver"
+          },
+          {
+            "itemId":405,
+            "itemName": "Whole Chicken",
+            "itemPhoto": "whole"
+          },
+          {
+            "itemId":406,
+            "itemName": "Whole duck",
+            "itemPhoto": "duck"
+          }
+        ]
+      }
+    ]
+  }
+}

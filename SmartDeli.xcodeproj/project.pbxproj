@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		030A82FF1D1546F900BEC51E /* DeliTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030A82FE1D1546F900BEC51E /* DeliTestTests.swift */; };
+		03DF191C1DE1BA8E0000AF56 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 03DF19041DE1BA8E0000AF56 /* Base.lproj */; };
+		03DF191D1DE1BA8E0000AF56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03DF19051DE1BA8E0000AF56 /* Assets.xcassets */; };
+		03DF191E1DE1BA8E0000AF56 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03DF19061DE1BA8E0000AF56 /* Info.plist */; };
+		03DF191F1DE1BA8E0000AF56 /* order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19071DE1BA8E0000AF56 /* order.swift */; };
+		03DF19201DE1BA8E0000AF56 /* NewItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19081DE1BA8E0000AF56 /* NewItemDetailView.swift */; };
+		03DF19211DE1BA8E0000AF56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19091DE1BA8E0000AF56 /* HomeViewController.swift */; };
+		03DF19221DE1BA8E0000AF56 /* ItemCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF190A1DE1BA8E0000AF56 /* ItemCollectionViewController.swift */; };
+		03DF19231DE1BA8E0000AF56 /* DeliViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF190B1DE1BA8E0000AF56 /* DeliViewController.swift */; };
+		03DF19241DE1BA8E0000AF56 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF190C1DE1BA8E0000AF56 /* Item.swift */; };
+		03DF19251DE1BA8E0000AF56 /* orderViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF190D1DE1BA8E0000AF56 /* orderViewConroller.swift */; };
+		03DF19261DE1BA8E0000AF56 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF190E1DE1BA8E0000AF56 /* Inventory.swift */; };
+		03DF19271DE1BA8E0000AF56 /* BeefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF190F1DE1BA8E0000AF56 /* BeefViewController.swift */; };
+		03DF19281DE1BA8E0000AF56 /* PoultryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19101DE1BA8E0000AF56 /* PoultryViewController.swift */; };
+		03DF19291DE1BA8E0000AF56 /* FishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19111DE1BA8E0000AF56 /* FishViewController.swift */; };
+		03DF192A1DE1BA8E0000AF56 /* CheeseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19121DE1BA8E0000AF56 /* CheeseViewController.swift */; };
+		03DF192B1DE1BA8E0000AF56 /* DeliTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19131DE1BA8E0000AF56 /* DeliTableViewController.swift */; };
+		03DF192C1DE1BA8E0000AF56 /* orderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19141DE1BA8E0000AF56 /* orderTableViewCell.swift */; };
+		03DF192D1DE1BA8E0000AF56 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19151DE1BA8E0000AF56 /* RegistrationViewController.swift */; };
+		03DF192E1DE1BA8E0000AF56 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19161DE1BA8E0000AF56 /* Registration.swift */; };
+		03DF192F1DE1BA8E0000AF56 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19171DE1BA8E0000AF56 /* FirstViewController.swift */; };
+		03DF19301DE1BA8E0000AF56 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19181DE1BA8E0000AF56 /* ItemCollectionViewCell.swift */; };
+		03DF19311DE1BA8E0000AF56 /* BeefTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19191DE1BA8E0000AF56 /* BeefTableViewCell.swift */; };
+		03DF19321DE1BA8E0000AF56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF191A1DE1BA8E0000AF56 /* AppDelegate.swift */; };
+		03DF19331DE1BA8E0000AF56 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF191B1DE1BA8E0000AF56 /* SecondViewController.swift */; };
+		03DF19381DE1BE7F0000AF56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03DF19371DE1BE7F0000AF56 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		030A82FB1D1546F900BEC51E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 030A82DC1D1546F800BEC51E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 030A82E31D1546F900BEC51E;
+			remoteInfo = DeliTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		030A82E41D1546F900BEC51E /* SmartDeli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartDeli.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		030A82FA1D1546F900BEC51E /* SmartDeli.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartDeli.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		030A82FE1D1546F900BEC51E /* DeliTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliTestTests.swift; sourceTree = "<group>"; };
+		030A83001D1546F900BEC51E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03DF19041DE1BA8E0000AF56 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Base.lproj; path = SmartDeli/Base.lproj; sourceTree = SOURCE_ROOT; };
+		03DF19051DE1BA8E0000AF56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = SmartDeli/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		03DF19061DE1BA8E0000AF56 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SmartDeli/Info.plist; sourceTree = SOURCE_ROOT; };
+		03DF19071DE1BA8E0000AF56 /* order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = order.swift; path = SmartDeli/order.swift; sourceTree = SOURCE_ROOT; };
+		03DF19081DE1BA8E0000AF56 /* NewItemDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewItemDetailView.swift; path = SmartDeli/NewItemDetailView.swift; sourceTree = SOURCE_ROOT; };
+		03DF19091DE1BA8E0000AF56 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = SmartDeli/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
+		03DF190A1DE1BA8E0000AF56 /* ItemCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemCollectionViewController.swift; path = SmartDeli/ItemCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
+		03DF190B1DE1BA8E0000AF56 /* DeliViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeliViewController.swift; path = SmartDeli/DeliViewController.swift; sourceTree = SOURCE_ROOT; };
+		03DF190C1DE1BA8E0000AF56 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = SmartDeli/Item.swift; sourceTree = SOURCE_ROOT; };
+		03DF190D1DE1BA8E0000AF56 /* orderViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = orderViewConroller.swift; path = SmartDeli/orderViewConroller.swift; sourceTree = SOURCE_ROOT; };
+		03DF190E1DE1BA8E0000AF56 /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Inventory.swift; path = SmartDeli/Inventory.swift; sourceTree = SOURCE_ROOT; };
+		03DF190F1DE1BA8E0000AF56 /* BeefViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeefViewController.swift; path = SmartDeli/BeefViewController.swift; sourceTree = SOURCE_ROOT; };
+		03DF19101DE1BA8E0000AF56 /* PoultryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoultryViewController.swift; path = SmartDeli/PoultryViewController.swift; sourceTree = SOURCE_ROOT; };
+		03DF19111DE1BA8E0000AF56 /* FishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FishViewController.swift; path = SmartDeli/FishViewController.swift; sourceTree = SOURCE_ROOT; };
+		03DF19121DE1BA8E0000AF56 /* CheeseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheeseViewController.swift; path = SmartDeli/CheeseViewController.swift; sourceTree = SOURCE_ROOT; };
+		03DF19131DE1BA8E0000AF56 /* DeliTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeliTableViewController.swift; path = SmartDeli/DeliTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		03DF19141DE1BA8E0000AF56 /* orderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = orderTableViewCell.swift; path = SmartDeli/orderTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		03DF19151DE1BA8E0000AF56 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = SmartDeli/RegistrationViewController.swift; sourceTree = SOURCE_ROOT; };
+		03DF19161DE1BA8E0000AF56 /* Registration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Registration.swift; path = SmartDeli/Registration.swift; sourceTree = SOURCE_ROOT; };
+		03DF19171DE1BA8E0000AF56 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = SmartDeli/FirstViewController.swift; sourceTree = SOURCE_ROOT; };
+		03DF19181DE1BA8E0000AF56 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemCollectionViewCell.swift; path = SmartDeli/ItemCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		03DF19191DE1BA8E0000AF56 /* BeefTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeefTableViewCell.swift; path = SmartDeli/BeefTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		03DF191A1DE1BA8E0000AF56 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SmartDeli/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		03DF191B1DE1BA8E0000AF56 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = SmartDeli/SecondViewController.swift; sourceTree = SOURCE_ROOT; };
+		03DF19371DE1BE7F0000AF56 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = SmartDeli/Main.storyboard; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		030A82E11D1546F900BEC51E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		030A82F71D1546F900BEC51E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		030A82DB1D1546F800BEC51E = {
+			isa = PBXGroup;
+			children = (
+				030A82E61D1546F900BEC51E /* SmartDeli */,
+				030A82FD1D1546F900BEC51E /* DeliTestTests */,
+				030A82E51D1546F900BEC51E /* Products */,
+				F5EFFF16A2CF283FD3E2BCA0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		030A82E51D1546F900BEC51E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				030A82E41D1546F900BEC51E /* SmartDeli.app */,
+				030A82FA1D1546F900BEC51E /* SmartDeli.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		030A82E61D1546F900BEC51E /* SmartDeli */ = {
+			isa = PBXGroup;
+			children = (
+				03DF19371DE1BE7F0000AF56 /* Main.storyboard */,
+				03DF19041DE1BA8E0000AF56 /* Base.lproj */,
+				03DF19051DE1BA8E0000AF56 /* Assets.xcassets */,
+				03DF19061DE1BA8E0000AF56 /* Info.plist */,
+				03DF19071DE1BA8E0000AF56 /* order.swift */,
+				03DF19081DE1BA8E0000AF56 /* NewItemDetailView.swift */,
+				03DF19091DE1BA8E0000AF56 /* HomeViewController.swift */,
+				03DF190A1DE1BA8E0000AF56 /* ItemCollectionViewController.swift */,
+				03DF190B1DE1BA8E0000AF56 /* DeliViewController.swift */,
+				03DF190C1DE1BA8E0000AF56 /* Item.swift */,
+				03DF190D1DE1BA8E0000AF56 /* orderViewConroller.swift */,
+				03DF190E1DE1BA8E0000AF56 /* Inventory.swift */,
+				03DF190F1DE1BA8E0000AF56 /* BeefViewController.swift */,
+				03DF19101DE1BA8E0000AF56 /* PoultryViewController.swift */,
+				03DF19111DE1BA8E0000AF56 /* FishViewController.swift */,
+				03DF19121DE1BA8E0000AF56 /* CheeseViewController.swift */,
+				03DF19131DE1BA8E0000AF56 /* DeliTableViewController.swift */,
+				03DF19141DE1BA8E0000AF56 /* orderTableViewCell.swift */,
+				03DF19151DE1BA8E0000AF56 /* RegistrationViewController.swift */,
+				03DF19161DE1BA8E0000AF56 /* Registration.swift */,
+				03DF19171DE1BA8E0000AF56 /* FirstViewController.swift */,
+				03DF19181DE1BA8E0000AF56 /* ItemCollectionViewCell.swift */,
+				03DF19191DE1BA8E0000AF56 /* BeefTableViewCell.swift */,
+				03DF191A1DE1BA8E0000AF56 /* AppDelegate.swift */,
+				03DF191B1DE1BA8E0000AF56 /* SecondViewController.swift */,
+			);
+			name = SmartDeli;
+			path = DeliTest;
+			sourceTree = "<group>";
+		};
+		030A82FD1D1546F900BEC51E /* DeliTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				030A82FE1D1546F900BEC51E /* DeliTestTests.swift */,
+				030A83001D1546F900BEC51E /* Info.plist */,
+			);
+			path = DeliTestTests;
+			sourceTree = "<group>";
+		};
+		F5EFFF16A2CF283FD3E2BCA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		030A82E31D1546F900BEC51E /* SmartDeli */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 030A83031D1546F900BEC51E /* Build configuration list for PBXNativeTarget "SmartDeli" */;
+			buildPhases = (
+				030A82E01D1546F900BEC51E /* Sources */,
+				030A82E11D1546F900BEC51E /* Frameworks */,
+				030A82E21D1546F900BEC51E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartDeli;
+			productName = DeliTest;
+			productReference = 030A82E41D1546F900BEC51E /* SmartDeli.app */;
+			productType = "com.apple.product-type.application";
+		};
+		030A82F91D1546F900BEC51E /* SmartDeliTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 030A83061D1546F900BEC51E /* Build configuration list for PBXNativeTarget "SmartDeliTests" */;
+			buildPhases = (
+				030A82F61D1546F900BEC51E /* Sources */,
+				030A82F71D1546F900BEC51E /* Frameworks */,
+				030A82F81D1546F900BEC51E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				030A82FC1D1546F900BEC51E /* PBXTargetDependency */,
+			);
+			name = SmartDeliTests;
+			productName = DeliTestTests;
+			productReference = 030A82FA1D1546F900BEC51E /* SmartDeli.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		030A82DC1D1546F800BEC51E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Zeev Gross";
+				TargetAttributes = {
+					030A82E31D1546F900BEC51E = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = PM3NE843NS;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					030A82F91D1546F900BEC51E = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 030A82E31D1546F900BEC51E;
+					};
+				};
+			};
+			buildConfigurationList = 030A82DF1D1546F800BEC51E /* Build configuration list for PBXProject "SmartDeli" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 030A82DB1D1546F800BEC51E;
+			productRefGroup = 030A82E51D1546F900BEC51E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				030A82E31D1546F900BEC51E /* SmartDeli */,
+				030A82F91D1546F900BEC51E /* SmartDeliTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		030A82E21D1546F900BEC51E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03DF191E1DE1BA8E0000AF56 /* Info.plist in Resources */,
+				03DF191C1DE1BA8E0000AF56 /* Base.lproj in Resources */,
+				03DF191D1DE1BA8E0000AF56 /* Assets.xcassets in Resources */,
+				03DF19381DE1BE7F0000AF56 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		030A82F81D1546F900BEC51E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		030A82E01D1546F900BEC51E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03DF19271DE1BA8E0000AF56 /* BeefViewController.swift in Sources */,
+				03DF19211DE1BA8E0000AF56 /* HomeViewController.swift in Sources */,
+				03DF192C1DE1BA8E0000AF56 /* orderTableViewCell.swift in Sources */,
+				03DF192B1DE1BA8E0000AF56 /* DeliTableViewController.swift in Sources */,
+				03DF192E1DE1BA8E0000AF56 /* Registration.swift in Sources */,
+				03DF19301DE1BA8E0000AF56 /* ItemCollectionViewCell.swift in Sources */,
+				03DF19201DE1BA8E0000AF56 /* NewItemDetailView.swift in Sources */,
+				03DF19241DE1BA8E0000AF56 /* Item.swift in Sources */,
+				03DF19231DE1BA8E0000AF56 /* DeliViewController.swift in Sources */,
+				03DF19331DE1BA8E0000AF56 /* SecondViewController.swift in Sources */,
+				03DF19261DE1BA8E0000AF56 /* Inventory.swift in Sources */,
+				03DF19321DE1BA8E0000AF56 /* AppDelegate.swift in Sources */,
+				03DF192F1DE1BA8E0000AF56 /* FirstViewController.swift in Sources */,
+				03DF192A1DE1BA8E0000AF56 /* CheeseViewController.swift in Sources */,
+				03DF19251DE1BA8E0000AF56 /* orderViewConroller.swift in Sources */,
+				03DF192D1DE1BA8E0000AF56 /* RegistrationViewController.swift in Sources */,
+				03DF19281DE1BA8E0000AF56 /* PoultryViewController.swift in Sources */,
+				03DF19311DE1BA8E0000AF56 /* BeefTableViewCell.swift in Sources */,
+				03DF191F1DE1BA8E0000AF56 /* order.swift in Sources */,
+				03DF19291DE1BA8E0000AF56 /* FishViewController.swift in Sources */,
+				03DF19221DE1BA8E0000AF56 /* ItemCollectionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		030A82F61D1546F900BEC51E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				030A82FF1D1546F900BEC51E /* DeliTestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		030A82FC1D1546F900BEC51E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 030A82E31D1546F900BEC51E /* SmartDeli */;
+			targetProxy = 030A82FB1D1546F900BEC51E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		030A83011D1546F900BEC51E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		030A83021D1546F900BEC51E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		030A83041D1546F900BEC51E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/SmartDeli/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Gross.SmartDeli;
+				PRODUCT_NAME = SmartDeli;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		030A83051D1546F900BEC51E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/SmartDeli/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Gross.SmartDeli;
+				PRODUCT_NAME = SmartDeli;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		030A83071D1546F900BEC51E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DeliTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Gross.DeliTestTests;
+				PRODUCT_NAME = SmartDeli;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartDeli.app/SmartDeli";
+			};
+			name = Debug;
+		};
+		030A83081D1546F900BEC51E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DeliTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Gross.DeliTestTests;
+				PRODUCT_NAME = SmartDeli;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartDeli.app/SmartDeli";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		030A82DF1D1546F800BEC51E /* Build configuration list for PBXProject "SmartDeli" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				030A83011D1546F900BEC51E /* Debug */,
+				030A83021D1546F900BEC51E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		030A83031D1546F900BEC51E /* Build configuration list for PBXNativeTarget "SmartDeli" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				030A83041D1546F900BEC51E /* Debug */,
+				030A83051D1546F900BEC51E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		030A83061D1546F900BEC51E /* Build configuration list for PBXNativeTarget "SmartDeliTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				030A83071D1546F900BEC51E /* Debug */,
+				030A83081D1546F900BEC51E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 030A82DC1D1546F800BEC51E /* Project object */;
+}
