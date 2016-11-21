@@ -72,8 +72,7 @@ class storeInventory : NSObject
                             let tmpItemId:Int = (items[j]["itemId"] as? Int)!
                             let tmpItemName = (items[j]["itemName"] as? String)!
                             let tmpPhotoName = (items[j]["itemPhoto"] as? String)!
-                            let tmpPhoto = UIImage(named:tmpPhotoName)
-                            
+                            let tmpPhoto = loadPhoto(tmpPhotoName)
                             
                             let item = inventoryItem(itemId: tmpItemId,name:  tmpItemName, photo: tmpPhoto)!
                             tmpDeli.Items.append(item)
@@ -119,6 +118,22 @@ class storeInventory : NSObject
             }
         }
         return 0
+    }
+    
+    func loadPhoto(name: String) -> UIImage{
+        let remoteSource: Bool = false
+        var ret: UIImage
+        
+        if (remoteSource) {
+        
+            ret = UIImage(named:"defaultImage")!
+        
+        }
+        else{
+            
+        ret =  UIImage(named:name)!
+        }
+        return ret
     }
 }
 

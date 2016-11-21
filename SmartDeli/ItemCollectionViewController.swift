@@ -13,15 +13,15 @@ var store = storeInventory(name: "Rishon", id: 123)
 class ItemCollectionViewController : UICollectionViewController {
     
     
-    var tableData: [String] = ["T-Bone", "Gound Beef", "Fillet","Osso Bucco"]
-    var tableImages: [String] = ["tbone", "ground", "fillet", "osobucco"]
+//    var tableData: [String] = ["T-Bone", "Gound Beef", "Fillet","Osso Bucco"]
+//    var tableImages: [String] = ["tbone", "ground", "fillet", "osobucco"]
     var inventoryTable = [inventory]()
 //  var store = storeInventory(name: "Rishon", id: 123)
     var deliName: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        beefInventoryLoad()
+        inventoryLoad()
     }
 
     
@@ -73,7 +73,7 @@ class ItemCollectionViewController : UICollectionViewController {
     }
     
 
-    func beefInventoryLoad() {
+    func inventoryLoad() {
         
         // load inventory data
     
