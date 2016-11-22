@@ -10,7 +10,6 @@
 		030A82FF1D1546F900BEC51E /* DeliTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030A82FE1D1546F900BEC51E /* DeliTestTests.swift */; };
 		03DF191C1DE1BA8E0000AF56 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 03DF19041DE1BA8E0000AF56 /* Base.lproj */; };
 		03DF191D1DE1BA8E0000AF56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03DF19051DE1BA8E0000AF56 /* Assets.xcassets */; };
-		03DF191E1DE1BA8E0000AF56 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03DF19061DE1BA8E0000AF56 /* Info.plist */; };
 		03DF191F1DE1BA8E0000AF56 /* order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19071DE1BA8E0000AF56 /* order.swift */; };
 		03DF19201DE1BA8E0000AF56 /* NewItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19081DE1BA8E0000AF56 /* NewItemDetailView.swift */; };
 		03DF19211DE1BA8E0000AF56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19091DE1BA8E0000AF56 /* HomeViewController.swift */; };
@@ -33,6 +32,7 @@
 		03DF19321DE1BA8E0000AF56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF191A1DE1BA8E0000AF56 /* AppDelegate.swift */; };
 		03DF19331DE1BA8E0000AF56 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF191B1DE1BA8E0000AF56 /* SecondViewController.swift */; };
 		03DF19381DE1BE7F0000AF56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03DF19371DE1BE7F0000AF56 /* Main.storyboard */; };
+		03DF193A1DE41C820000AF56 /* ImageBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19391DE41C820000AF56 /* ImageBank.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,17 +75,13 @@
 		03DF191A1DE1BA8E0000AF56 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SmartDeli/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		03DF191B1DE1BA8E0000AF56 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = SmartDeli/SecondViewController.swift; sourceTree = SOURCE_ROOT; };
 		03DF19371DE1BE7F0000AF56 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = SmartDeli/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		03DF19391DE41C820000AF56 /* ImageBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageBank.swift; path = SmartDeli/ImageBank.swift; sourceTree = SOURCE_ROOT; };
+		50C9539CFAF69A52267EAFF6 /* Pods_SmartDeli.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartDeli.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE2EDC53EA36135E92DDCEB2 /* Pods_SmartDeliTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartDeliTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		030A82E11D1546F900BEC51E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		030A82F71D1546F900BEC51E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -102,6 +98,7 @@
 				030A82FD1D1546F900BEC51E /* DeliTestTests */,
 				030A82E51D1546F900BEC51E /* Products */,
 				F5EFFF16A2CF283FD3E2BCA0 /* Frameworks */,
+				A6582D73A04B832011CCBD3E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +139,7 @@
 				03DF19191DE1BA8E0000AF56 /* BeefTableViewCell.swift */,
 				03DF191A1DE1BA8E0000AF56 /* AppDelegate.swift */,
 				03DF191B1DE1BA8E0000AF56 /* SecondViewController.swift */,
+				03DF19391DE41C820000AF56 /* ImageBank.swift */,
 			);
 			name = SmartDeli;
 			path = DeliTest;
@@ -156,9 +154,18 @@
 			path = DeliTestTests;
 			sourceTree = "<group>";
 		};
+		A6582D73A04B832011CCBD3E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F5EFFF16A2CF283FD3E2BCA0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50C9539CFAF69A52267EAFF6 /* Pods_SmartDeli.framework */,
+				CE2EDC53EA36135E92DDCEB2 /* Pods_SmartDeliTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -188,7 +195,6 @@
 			buildConfigurationList = 030A83061D1546F900BEC51E /* Build configuration list for PBXNativeTarget "SmartDeliTests" */;
 			buildPhases = (
 				030A82F61D1546F900BEC51E /* Sources */,
-				030A82F71D1546F900BEC51E /* Frameworks */,
 				030A82F81D1546F900BEC51E /* Resources */,
 			);
 			buildRules = (
@@ -253,7 +259,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03DF191E1DE1BA8E0000AF56 /* Info.plist in Resources */,
 				03DF191C1DE1BA8E0000AF56 /* Base.lproj in Resources */,
 				03DF191D1DE1BA8E0000AF56 /* Assets.xcassets in Resources */,
 				03DF19381DE1BE7F0000AF56 /* Main.storyboard in Resources */,
@@ -277,6 +282,7 @@
 				03DF19271DE1BA8E0000AF56 /* BeefViewController.swift in Sources */,
 				03DF19211DE1BA8E0000AF56 /* HomeViewController.swift in Sources */,
 				03DF192C1DE1BA8E0000AF56 /* orderTableViewCell.swift in Sources */,
+				03DF193A1DE41C820000AF56 /* ImageBank.swift in Sources */,
 				03DF192B1DE1BA8E0000AF56 /* DeliTableViewController.swift in Sources */,
 				03DF192E1DE1BA8E0000AF56 /* Registration.swift in Sources */,
 				03DF19301DE1BA8E0000AF56 /* ItemCollectionViewCell.swift in Sources */,

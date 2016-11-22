@@ -14,15 +14,28 @@ class storeInventory : NSObject
     var storeName: String = ""
     var storeId: Int = 0
     var deli =  [deliInventory]()
-    
+    var photoCache = [PhotoItem]()
+    var cacheUpdated: Bool = false
     
     init?(name: String, id: Int){
         
         super.init()
         
-        // Initialization should fail if there is no deli name
-  
+        // Load any saved meals, otherwise load sample data.
+        if let savedPhotos = loadPhotos() {
+            photoCache += savedPhotos
+        }
+        else {
+            
+            // Load the sample data.
+           print ("Cache empty")
+        }
+
         loadDeliItems()
+        
+        if cacheUpdated {
+            savePhotos()
+        }
     
         if name.isEmpty {
             return nil
@@ -87,6 +100,9 @@ class storeInventory : NSObject
             print("Invalid filename/path.")
         }
     }
+    
+    
+
 
     func getPhoto (deli: String, item: String) -> UIImage?{
         
@@ -121,20 +137,56 @@ class storeInventory : NSObject
     }
     
     func loadPhoto(name: String) -> UIImage{
-        let remoteSource: Bool = false
-        var ret: UIImage
+     
+        let baseUrl = "http://192.168.1.149/images/"
+        let myUrl: String = baseUrl + name + ".jpg"
+        let url = NSURL(string: myUrl)
+     
+        // Search in photo cache
         
-        if (remoteSource) {
-        
-            ret = UIImage(named:"defaultImage")!
-        
+        for i in 0..<photoCache.count{
+            if photoCache[i].name == name{
+                return photoCache[i].photo!
+            }
         }
+        
+        
+        //load from network
+        guard let imageData = NSData(contentsOfURL: url!)
         else{
-            
-        ret =  UIImage(named:name)!
+            print ("\(name) is missing")
+            return UIImage(named: "placeholder")!
         }
-        return ret
+        
+        //update photo cache
+        
+        let photo = UIImage(data:imageData)!
+        let newPhoto = PhotoItem( name: name, photo: photo)
+        photoCache.append (newPhoto!)
+        print ("photo chack updated with \(name)")
+        cacheUpdated = true
+        return photo
+        
     }
+    
+    
+    // MARK: NSCoding
+    
+    func savePhotos() {
+        
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(photoCache, toFile: PhotoItem.ArchiveURL.path!)
+        
+        if !isSuccessfulSave {
+            print("Failed to save Photos...")
+        }
+    }
+    
+    func loadPhotos() -> [PhotoItem]? {
+        
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(PhotoItem.ArchiveURL.path!) as? [PhotoItem]
+        
+    }
+    
 }
 
 class deliInventory: NSObject  {
