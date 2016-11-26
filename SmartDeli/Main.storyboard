@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Kpo-lC-QFR">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -8,17 +9,17 @@
         <!--Order Table View Controller-->
         <scene sceneID="su5-0F-Qcf">
             <objects>
-                <tableViewController id="c70-QM-Fjq" userLabel="Order Table View Controller" customClass="orderViewController" customModule="DeliTest" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="c70-QM-Fjq" userLabel="Order Table View Controller" customClass="orderViewController" customModule="SmartDeli" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" id="L4z-Ah-beg">
                         <rect key="frame" x="0.0" y="0.0" width="541" height="316"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderTableViewCell" rowHeight="75" id="vG1-ha-9PI" customClass="orderTableViewCell" customModule="DeliTest" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderTableViewCell" rowHeight="75" id="vG1-ha-9PI" customClass="orderTableViewCell" customModule="SmartDeli" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="541" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vG1-ha-9PI" id="les-Ez-Qbn">
-                                    <rect key="frame" x="0.0" y="0.0" width="541" height="75"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="541" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="58" placeholderIntrinsicHeight="58" translatesAutoresizingMaskIntoConstraints="NO" id="g8W-sR-Wx5">
@@ -86,7 +87,7 @@
         <!--Home-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="HomeViewController" customModule="DeliTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="HomeViewController" customModule="SmartDeli" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -151,7 +152,7 @@
         <!--Item Collection View Controller-->
         <scene sceneID="Zgb-RS-Yof">
             <objects>
-                <collectionViewController id="ahp-Ea-1Xh" userLabel="Item Collection View Controller" customClass="ItemCollectionViewController" customModule="DeliTest" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="ahp-Ea-1Xh" userLabel="Item Collection View Controller" customClass="ItemCollectionViewController" customModule="SmartDeli" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="N57-sD-CVS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,7 +164,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ItemCollectionViewCell" reuseIdentifier="ItemCollectionViewCell" id="Kjq-Yy-Bp9" userLabel="Item Collection View Cell" customClass="ItemCollectionViewCell" customModule="DeliTest" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ItemCollectionViewCell" reuseIdentifier="ItemCollectionViewCell" id="Kjq-Yy-Bp9" userLabel="Item Collection View Cell" customClass="ItemCollectionViewCell" customModule="SmartDeli" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="160" height="183"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -204,7 +205,7 @@
         <!--New Item View Controller-->
         <scene sceneID="1Lx-No-iVp">
             <objects>
-                <viewController id="59V-wy-DvY" userLabel="New Item View Controller" customClass="NewItemDetailView" customModule="DeliTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="59V-wy-DvY" userLabel="New Item View Controller" customClass="NewItemDetailView" customModule="SmartDeli" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vgj-T9-5nP"/>
                         <viewControllerLayoutGuide type="bottom" id="oSC-7I-Fx4"/>
@@ -305,17 +306,17 @@
         <!--Beef Table View Controller-->
         <scene sceneID="uua-Px-P5H">
             <objects>
-                <tableViewController id="4L5-PF-pU4" userLabel="Beef Table View Controller" customClass="BeefViewController" customModule="DeliTest" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="4L5-PF-pU4" userLabel="Beef Table View Controller" customClass="BeefViewController" customModule="SmartDeli" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="8Io-yh-eWB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeefTableViewCell" rowHeight="90" id="8Ed-vF-AKW" customClass="BeefTableViewCell" customModule="DeliTest" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeefTableViewCell" rowHeight="90" id="8Ed-vF-AKW" customClass="BeefTableViewCell" customModule="SmartDeli" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Ed-vF-AKW" id="U5h-YF-m9z">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="112" placeholderIntrinsicHeight="97" translatesAutoresizingMaskIntoConstraints="NO" id="pYr-pf-Dfa" userLabel="itemPhoto">
@@ -364,7 +365,7 @@
         <!--Registration View Controller-->
         <scene sceneID="oea-A2-Zi9">
             <objects>
-                <viewController id="Ywx-go-Qts" userLabel="Registration View Controller" customClass="RegistrationViewController" customModule="DeliTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ywx-go-Qts" userLabel="Registration View Controller" customClass="RegistrationViewController" customModule="SmartDeli" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bvl-5s-PJP"/>
                         <viewControllerLayoutGuide type="bottom" id="HR4-8c-1Wq"/>
@@ -744,7 +745,7 @@
         <!--Generic Item Collection View Controller-->
         <scene sceneID="VWN-cn-TqI">
             <objects>
-                <collectionViewController id="bH8-sE-EYM" userLabel="Generic Item Collection View Controller" customClass="ItemCollectionViewController" customModule="DeliTest" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="bH8-sE-EYM" userLabel="Generic Item Collection View Controller" customClass="ItemCollectionViewController" customModule="SmartDeli" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="yqG-EW-ZAL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -756,7 +757,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ItemCollectionViewCell" reuseIdentifier="ItemCollectionViewCell" id="2xW-Ps-h8s" userLabel="Item Collection View Cell" customClass="ItemCollectionViewCell" customModule="DeliTest" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ItemCollectionViewCell" reuseIdentifier="ItemCollectionViewCell" id="2xW-Ps-h8s" userLabel="Item Collection View Cell" customClass="ItemCollectionViewCell" customModule="SmartDeli" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="160" height="183"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -799,7 +800,7 @@
         <!--Generic New Item View Controller-->
         <scene sceneID="rNw-wk-s36">
             <objects>
-                <viewController id="RZx-tF-mwY" userLabel="Generic New Item View Controller" customClass="NewItemDetailView" customModule="DeliTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RZx-tF-mwY" userLabel="Generic New Item View Controller" customClass="NewItemDetailView" customModule="SmartDeli" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wZ3-xW-8fr"/>
                         <viewControllerLayoutGuide type="bottom" id="kA9-Jb-pIK"/>
@@ -900,17 +901,17 @@
         <!--Cheese Table View Controller-->
         <scene sceneID="soa-nB-J1N">
             <objects>
-                <tableViewController id="2yY-eL-EO7" userLabel="Cheese Table View Controller" customClass="CheeseViewController" customModule="DeliTest" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="2yY-eL-EO7" userLabel="Cheese Table View Controller" customClass="CheeseViewController" customModule="SmartDeli" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="8z5-ZX-CFp">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeefTableViewCell" rowHeight="90" id="hGY-Gi-ClK" customClass="BeefTableViewCell" customModule="DeliTest" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeefTableViewCell" rowHeight="90" id="hGY-Gi-ClK" customClass="BeefTableViewCell" customModule="SmartDeli" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hGY-Gi-ClK" id="lBV-Pi-bWn">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="112" placeholderIntrinsicHeight="97" translatesAutoresizingMaskIntoConstraints="NO" id="41n-IR-7RO" userLabel="itemPhoto">
@@ -1000,7 +1001,7 @@
         <!--Generic Item Collection View Controller-->
         <scene sceneID="40X-pV-e8p">
             <objects>
-                <collectionViewController id="DHc-Lr-4iZ" userLabel="Generic Item Collection View Controller" customClass="ItemCollectionViewController" customModule="DeliTest" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="DHc-Lr-4iZ" userLabel="Generic Item Collection View Controller" customClass="ItemCollectionViewController" customModule="SmartDeli" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ct7-pl-EtB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1012,7 +1013,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ItemCollectionViewCell" reuseIdentifier="ItemCollectionViewCell" id="KSt-jQ-YkJ" userLabel="Item Collection View Cell" customClass="ItemCollectionViewCell" customModule="DeliTest" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ItemCollectionViewCell" reuseIdentifier="ItemCollectionViewCell" id="KSt-jQ-YkJ" userLabel="Item Collection View Cell" customClass="ItemCollectionViewCell" customModule="SmartDeli" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="160" height="183"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1055,7 +1056,7 @@
         <!--Generic New Item View Controller-->
         <scene sceneID="9Yk-Px-nSr">
             <objects>
-                <viewController id="tsq-eH-U8h" userLabel="Generic New Item View Controller" customClass="NewItemDetailView" customModule="DeliTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tsq-eH-U8h" userLabel="Generic New Item View Controller" customClass="NewItemDetailView" customModule="SmartDeli" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="guh-xR-5P2"/>
                         <viewControllerLayoutGuide type="bottom" id="9pS-yl-nzi"/>
@@ -1156,17 +1157,17 @@
         <!--Fish Table View Controller-->
         <scene sceneID="zA9-vw-Tye">
             <objects>
-                <tableViewController id="Drx-3L-dqP" userLabel="Fish Table View Controller" customClass="FishViewController" customModule="DeliTest" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Drx-3L-dqP" userLabel="Fish Table View Controller" customClass="FishViewController" customModule="SmartDeli" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="4AF-sV-pJb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeefTableViewCell" rowHeight="90" id="YSj-en-80B" customClass="BeefTableViewCell" customModule="DeliTest" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeefTableViewCell" rowHeight="90" id="YSj-en-80B" customClass="BeefTableViewCell" customModule="SmartDeli" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YSj-en-80B" id="yHI-So-U4E">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="112" placeholderIntrinsicHeight="97" translatesAutoresizingMaskIntoConstraints="NO" id="QFN-w5-Grz" userLabel="itemPhoto">
@@ -1220,7 +1221,7 @@
         <!--Generic Item Collection View Controller-->
         <scene sceneID="hhH-l4-Wgx">
             <objects>
-                <collectionViewController id="I3J-zc-NrN" userLabel="Generic Item Collection View Controller" customClass="ItemCollectionViewController" customModule="DeliTest" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="I3J-zc-NrN" userLabel="Generic Item Collection View Controller" customClass="ItemCollectionViewController" customModule="SmartDeli" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="7T1-pc-etl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1232,7 +1233,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ItemCollectionViewCell" reuseIdentifier="ItemCollectionViewCell" id="MC9-zQ-d3O" userLabel="Item Collection View Cell" customClass="ItemCollectionViewCell" customModule="DeliTest" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ItemCollectionViewCell" reuseIdentifier="ItemCollectionViewCell" id="MC9-zQ-d3O" userLabel="Item Collection View Cell" customClass="ItemCollectionViewCell" customModule="SmartDeli" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="160" height="183"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1275,7 +1276,7 @@
         <!--Generic New Item View Controller-->
         <scene sceneID="ESt-HQ-Q1I">
             <objects>
-                <viewController id="MdA-ql-1RQ" userLabel="Generic New Item View Controller" customClass="NewItemDetailView" customModule="DeliTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MdA-ql-1RQ" userLabel="Generic New Item View Controller" customClass="NewItemDetailView" customModule="SmartDeli" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FE1-5V-r1i"/>
                         <viewControllerLayoutGuide type="bottom" id="mr6-Gh-MXP"/>
@@ -1376,17 +1377,17 @@
         <!--Fish Table View Controller-->
         <scene sceneID="j9Q-6k-wbc">
             <objects>
-                <tableViewController id="6fT-lO-Zhj" userLabel="Fish Table View Controller" customClass="PoultryViewController" customModule="DeliTest" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="6fT-lO-Zhj" userLabel="Fish Table View Controller" customClass="PoultryViewController" customModule="SmartDeli" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="uV3-dW-xEi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeefTableViewCell" rowHeight="90" id="o1e-5S-G6Z" customClass="BeefTableViewCell" customModule="DeliTest" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeefTableViewCell" rowHeight="90" id="o1e-5S-G6Z" customClass="BeefTableViewCell" customModule="SmartDeli" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o1e-5S-G6Z" id="UmN-Me-Z58">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="112" placeholderIntrinsicHeight="97" translatesAutoresizingMaskIntoConstraints="NO" id="z5D-ZU-tb5" userLabel="itemPhoto">

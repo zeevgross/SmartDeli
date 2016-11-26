@@ -253,7 +253,7 @@ class CustomerOrder :NSObject  {
             request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
             request.HTTPBody = jsonData
             
-            print ("Request -> \(request)")
+            //print ("Request -> \(request)")
             
             let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ data, response, error in
                 if error != nil{
@@ -421,7 +421,7 @@ class CustomerOrder :NSObject  {
                     tmpDeliResponse.estimedTime = (deli["eta"] as? String)!
                     tmpDeliResponse.startTime = (deli["created"] as? String)!
                     orderTracking.append(tmpDeliResponse)
-                    print("Added")
+                    
                     new = true
                 }
 
@@ -597,8 +597,6 @@ class CustomerOrder :NSObject  {
             request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
             request.HTTPBody = jsonData
             
-            print ("Request -> \(request)")
-            
             let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ data, response, error in
                 if error != nil{
                     print("Error -> \(error)")
@@ -635,9 +633,6 @@ class CustomerOrder :NSObject  {
         
         // insert json data to the request
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        
-        
-        print ("Request -> \(request)")
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ data, response, error in
             if error != nil{

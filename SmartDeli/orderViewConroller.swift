@@ -146,7 +146,6 @@ class orderViewController: UITableViewController {
                 let s2: NSDate = toDateTime(order!.orderTracking[j].estimedTime)
                 let c1: NSDate = toDateTime(orderCurrentDate)
                 let interval = Int(s2.timeIntervalSinceDate(c1))
-                print ("interval -> \(interval)")
                 if  ((interval < refVal) && (interval >= prevRef) && (used[j] == 0))
                 {
                     index = j
@@ -159,7 +158,7 @@ class orderViewController: UITableViewController {
             prevRef = refVal
             refVal = Int.max
         }
-        print("sort -> \(sortedOder)")
+        //print("sort -> \(sortedOder)")
         
     
     }

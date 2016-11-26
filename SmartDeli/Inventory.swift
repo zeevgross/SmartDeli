@@ -50,47 +50,53 @@ class storeInventory : NSObject
         
         var tmpDeli: deliInventory
         
-        //if let path = NSBundle.mainBundle().pathForResource("assets/inventory", ofType: "json") {
+        
         if let asset = NSDataAsset(name: "inventory", bundle: NSBundle.mainBundle()){
             do {
                 
-                if let jsonResult = try NSJSONSerialization.JSONObjectWithData(asset.data, options: []) as? [String:AnyObject]
+                if let jsonResult = try NSJSONSerialization.JSONObjectWithData(asset.data, options: []) as? [AnyObject]
                 {
-                    guard let store = jsonResult["store"] as? [String:AnyObject]
-                        else{
-                            return
-                    }
                     
-                    guard let delies = store["delies"] as? [AnyObject]
-                        else{
-                            return
-                    }
+                    let storeCount = jsonResult.count
                     
-                    for i in 0..<delies.count
+                    for idx in 0..<storeCount
                     {
-                        let tmpName = (delies[i]["deliName"] as? String)!
-                        let tmpId:Int = (delies[i]["deliId"] as? Int)!
-                     
-                        tmpDeli = deliInventory(name: tmpName, id: tmpId)!
-                        
-                        
-                        guard let items = delies[i]["items"] as? [AnyObject]
+                        guard let store = jsonResult[idx] as? [String:AnyObject]
                             else{
                                 return
                         }
-                        for j in 0..<items.count
-                        {
-                            
-                            
-                            let tmpItemId:Int = (items[j]["itemId"] as? Int)!
-                            let tmpItemName = (items[j]["itemName"] as? String)!
-                            let tmpPhotoName = (items[j]["itemPhoto"] as? String)!
-                            let tmpPhoto = loadPhoto(tmpPhotoName)
-                            
-                            let item = inventoryItem(itemId: tmpItemId,name:  tmpItemName, photo: tmpPhoto)!
-                            tmpDeli.Items.append(item)
+                        
+                        guard let delies = store["delies"] as? [AnyObject]
+                            else{
+                                return
                         }
-                        deli.append(tmpDeli)
+                        
+                        for i in 0..<delies.count
+                        {
+                            let tmpName = (delies[i]["deliName"] as? String)!
+                            let tmpId:Int = (delies[i]["deliId"] as? Int)!
+                         
+                            tmpDeli = deliInventory(name: tmpName, id: tmpId)!
+                            
+                            
+                            guard let items = delies[i]["products"] as? [AnyObject]
+                                else{
+                                    return
+                            }
+                            for j in 0..<items.count
+                            {
+                                
+                                
+                                let tmpItemId:Int = (items[j]["productId"] as? Int)!
+                                let tmpItemName = (items[j]["productName"] as? String)!
+                                let tmpPhotoName = (items[j]["productPhoto"] as? String)!
+                                let tmpPhoto = loadPhoto(tmpPhotoName)
+                                
+                                let item = inventoryItem(itemId: tmpItemId,name:  tmpItemName, photo: tmpPhoto)!
+                                tmpDeli.Items.append(item)
+                            }
+                            deli.append(tmpDeli)
+                        }
                     }
                 }
             } catch let error as NSError {

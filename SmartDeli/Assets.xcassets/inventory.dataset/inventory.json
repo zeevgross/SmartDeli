@@ -1,132 +1,132 @@
-{
-  "store": {
+[
+  {
     "name": "Rishon",
-    "id": 3,
+    "StoreId": 3,
     "delies": [
       {
         "deliName": "Beef",
         "deliId":1,
-        "items": [
+        "products": [
           {
-            "itemId":101,
-            "itemName": "T-Bone",
-            "itemPhoto": "tbone"
+            "productId":101,
+            "productName": "T-Bone",
+            "productPhoto": "tbone"
           },
           {
-            "itemId":102,
-            "itemName": "Gound Beef",
-            "itemPhoto": "ground"
+            "productId":102,
+            "productName": "Gound Beef",
+            "productPhoto": "ground"
           },
           {
-            "itemId":103,
-            "itemName": "Fillet",
-            "itemPhoto": "fillet"
+            "productId":103,
+            "productName": "Fillet",
+            "productPhoto": "fillet"
           },
           {
-            "itemId":104,
-            "itemName": "Osso Bucco",
-            "itemPhoto": "osobucco"
+            "productId":104,
+            "productName": "Osso Bucco",
+            "productPhoto": "osobucco"
           }
         ]
       },
       {
         "deliName": "Cheese",
         "deliId":2,
-        "items": [
+        "products": [
           {
-            "itemId":201,
-            "itemName": "Mozzarella",
-            "itemPhoto": "mozzarella"
+            "productId":201,
+            "productName": "Mozzarella",
+            "productPhoto": "mozzarella"
           },
           {
-            "itemId":202,
-            "itemName": "Manchego",
-            "itemPhoto": "manchego"
+            "productId":202,
+            "productName": "Manchego",
+            "productPhoto": "manchego"
           },
           {
-            "itemId":203,
-            "itemName": "Emmental",
-            "itemPhoto": "emmental"
+            "productId":203,
+            "productName": "Emmental",
+            "productPhoto": "emmental"
           },
           {
-            "itemId":204,
-            "itemName": "Camembert",
-            "itemPhoto": "camembert"
+            "productId":204,
+            "productName": "Camembert",
+            "productPhoto": "camembert"
           },
           {
-            "itemId":205,
-            "itemName": "Goat Chease",
-            "itemPhoto": "goat"
+            "productId":205,
+            "productName": "Goat Chease",
+            "productPhoto": "goat"
           }
         ]
       },
       {
         "deliName": "Fish",
         "deliId":3,
-        "items": [
+        "products": [
           {
-            "itemId":301,
-            "itemName": "Salmon",
-            "itemPhoto": "salmon"
+            "productId":301,
+            "productName": "Salmon",
+            "productPhoto": "salmon"
           },
           {
-            "itemId":302,
-            "itemName": "Sea bass",
-            "itemPhoto": "seabass"
+            "productId":302,
+            "productName": "Sea bass",
+            "productPhoto": "seabass"
           },
           {
-            "itemId":303,
-            "itemName": "Red mullet",
-            "itemPhoto": "redmullet"
+            "productId":303,
+            "productName": "Red mullet",
+            "productPhoto": "redmullet"
           },
           {
-            "itemId":304,
-            "itemName": "Tuna",
-            "itemPhoto": "tuna"
+            "productId":304,
+            "productName": "Tuna",
+            "productPhoto": "tuna"
           },
           {
-            "itemId":305,
-            "itemName": "Carp",
-            "itemPhoto": "carp"
+            "productId":305,
+            "productName": "Carp",
+            "productPhoto": "carp"
           }
         ]
       },
       {
         "deliName": "Poultry",
         "deliId":4,
-        "items": [
+        "products": [
           {
-            "itemId":401,
-            "itemName": "Ckicken Breast",
-            "itemPhoto": "breast"
+            "productId":401,
+            "productName": "Ckicken Breast",
+            "productPhoto": "breast"
           },
           {
-            "itemId":402,
-            "itemName": "Ckicken thigh",
-            "itemPhoto": "thigh"
+            "productId":402,
+            "productName": "Ckicken thigh",
+            "productPhoto": "thigh"
           },
           {
-            "itemId":403,
-            "itemName": "Chicken wings",
-            "itemPhoto": "wings"
+            "productId":403,
+            "productName": "Chicken wings",
+            "productPhoto": "wings"
           },
           {
-            "itemId":404,
-            "itemName": "Liver",
-            "itemPhoto": "liver"
+            "productId":404,
+            "productName": "Liver",
+            "productPhoto": "liver"
           },
           {
-            "itemId":405,
-            "itemName": "Whole Chicken",
-            "itemPhoto": "whole"
+            "productId":405,
+            "productName": "Whole Chicken",
+            "productPhoto": "whole"
           },
           {
-            "itemId":406,
-            "itemName": "Whole duck",
-            "itemPhoto": "duck"
+            "productId":406,
+            "productName": "Whole duck",
+            "productPhoto": "duck"
           }
         ]
       }
     ]
   }
-}
+]
