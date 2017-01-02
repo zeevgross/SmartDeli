@@ -22,5 +22,10 @@ class PoultryViewController: DeliViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override  func viewDidAppear(animated: Bool) {
+        
+        super.viewDidAppear(animated)
+    }
+
     
 }

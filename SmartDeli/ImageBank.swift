@@ -12,6 +12,7 @@ import UIKit
 struct PropertyKey {
     static let nameKey = "name"
     static let photoKey = "photo"
+    static let timeToLivekey = "ttl"
 }
 
 class PhotoItem: NSObject, NSCoding  {
@@ -19,6 +20,7 @@ class PhotoItem: NSObject, NSCoding  {
     
     var name: String
     var photo: UIImage?
+    var ttl: Int
     
     
     
@@ -33,7 +35,8 @@ class PhotoItem: NSObject, NSCoding  {
         // Initialize stored properties.
         self.name = name
         self.photo = photo
-        
+        self.ttl = 5 
+
         super.init()
         
         // Initialization should fail if there is no name or if the rating is negative.
@@ -48,7 +51,7 @@ class PhotoItem: NSObject, NSCoding  {
         
         aCoder.encodeObject(name, forKey: PropertyKey.nameKey)
         aCoder.encodeObject(photo, forKey: PropertyKey.photoKey)
-      
+        aCoder.encodeObject(ttl, forKey: PropertyKey.timeToLivekey)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {

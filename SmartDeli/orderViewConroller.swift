@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class orderViewController: UITableViewController {
     
     
@@ -21,12 +23,22 @@ class orderViewController: UITableViewController {
         
         // Load the data
         
-        
-        order!.pollOrderStatusRequest(order!.orderResponseTest)
-        order!.handleNewResponse()
+        order!.getOrderFromServer()
         sortByETA()
         
     }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        order!.getOrderFromServer()
+        sortByETA()
+        tableView.reloadData()
+        super.viewDidAppear(animated)
+
+        
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -51,12 +63,15 @@ class orderViewController: UITableViewController {
     {
         //Create Date Formatter
         let dateFormatter = NSDateFormatter()
+        dateFormatter.timeZone = NSTimeZone.localTimeZone()
+        
+        let utcDate: String  = strDate+" UTC"
         
         //Specify Format of String to Parse
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss ZZZ"
         
         //Parse into NSDate
-        let dateFromString : NSDate = dateFormatter.dateFromString(strDate)!
+        let dateFromString : NSDate = dateFormatter.dateFromString(utcDate)!
         
         //Return Parsed Date
         return dateFromString
@@ -75,18 +90,12 @@ class orderViewController: UITableViewController {
         
         // Fetches the appropriate meal for the data source layout.
         let deliOrder = order!.orderTracking[index]
-      /*
-        cell.itemName.text = item.name
-        cell.itemPhoto.image = item.photo
-        cell.itemComment.text = item.comment
-      */
         
-        
-        let orderCurrentDate: String = "29-10-2016 10:50:00"
+        let orderCurrentDate = NSDate()
         
         let s1: NSDate = toDateTime(deliOrder.startTime)
         let s2: NSDate = toDateTime(deliOrder.estimedTime)
-        let c1: NSDate = toDateTime(orderCurrentDate)
+        let c1: NSDate = orderCurrentDate
         
         let interval = s2.timeIntervalSinceDate(s1)
         let remain = s2.timeIntervalSinceDate(c1)
@@ -130,21 +139,24 @@ class orderViewController: UITableViewController {
         
         var refVal:Int = Int.max
         
-        var used = [Int](count: 10, repeatedValue: 0)
+        var used = [Int](count: 300, repeatedValue: 0)
         
         var prevRef = 0
         var index:Int = 0
+        
+        let orderCurrentDate = NSDate()
+        sortedOder.removeAll()
         
         for _ in 0..<order!.orderTracking.count
         {
             
             for j in 0..<order!.orderTracking.count
             {
-                let orderCurrentDate: String = "29-10-2016 10:50:00"
+                
                 
                 //let s1: NSDate = toDateTime(order!.orderTracking[j].startTime)
                 let s2: NSDate = toDateTime(order!.orderTracking[j].estimedTime)
-                let c1: NSDate = toDateTime(orderCurrentDate)
+                let c1: NSDate = orderCurrentDate
                 let interval = Int(s2.timeIntervalSinceDate(c1))
                 if  ((interval < refVal) && (interval >= prevRef) && (used[j] == 0))
                 {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		030A82FF1D1546F900BEC51E /* DeliTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030A82FE1D1546F900BEC51E /* DeliTestTests.swift */; };
+		037BAC771DE9F9640037049F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037BAC761DE9F9640037049F /* FirstViewController.swift */; };
 		03DF191C1DE1BA8E0000AF56 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 03DF19041DE1BA8E0000AF56 /* Base.lproj */; };
 		03DF191D1DE1BA8E0000AF56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03DF19051DE1BA8E0000AF56 /* Assets.xcassets */; };
 		03DF191F1DE1BA8E0000AF56 /* order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19071DE1BA8E0000AF56 /* order.swift */; };
@@ -26,7 +27,6 @@
 		03DF192C1DE1BA8E0000AF56 /* orderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19141DE1BA8E0000AF56 /* orderTableViewCell.swift */; };
 		03DF192D1DE1BA8E0000AF56 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19151DE1BA8E0000AF56 /* RegistrationViewController.swift */; };
 		03DF192E1DE1BA8E0000AF56 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19161DE1BA8E0000AF56 /* Registration.swift */; };
-		03DF192F1DE1BA8E0000AF56 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19171DE1BA8E0000AF56 /* FirstViewController.swift */; };
 		03DF19301DE1BA8E0000AF56 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19181DE1BA8E0000AF56 /* ItemCollectionViewCell.swift */; };
 		03DF19311DE1BA8E0000AF56 /* BeefTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF19191DE1BA8E0000AF56 /* BeefTableViewCell.swift */; };
 		03DF19321DE1BA8E0000AF56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF191A1DE1BA8E0000AF56 /* AppDelegate.swift */; };
@@ -50,6 +50,7 @@
 		030A82FA1D1546F900BEC51E /* SmartDeli.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartDeli.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		030A82FE1D1546F900BEC51E /* DeliTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliTestTests.swift; sourceTree = "<group>"; };
 		030A83001D1546F900BEC51E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		037BAC761DE9F9640037049F /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = SmartDeli/FirstViewController.swift; sourceTree = SOURCE_ROOT; };
 		03DF19041DE1BA8E0000AF56 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Base.lproj; path = SmartDeli/Base.lproj; sourceTree = SOURCE_ROOT; };
 		03DF19051DE1BA8E0000AF56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = SmartDeli/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		03DF19061DE1BA8E0000AF56 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SmartDeli/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -69,7 +70,6 @@
 		03DF19141DE1BA8E0000AF56 /* orderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = orderTableViewCell.swift; path = SmartDeli/orderTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		03DF19151DE1BA8E0000AF56 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = SmartDeli/RegistrationViewController.swift; sourceTree = SOURCE_ROOT; };
 		03DF19161DE1BA8E0000AF56 /* Registration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Registration.swift; path = SmartDeli/Registration.swift; sourceTree = SOURCE_ROOT; };
-		03DF19171DE1BA8E0000AF56 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = SmartDeli/FirstViewController.swift; sourceTree = SOURCE_ROOT; };
 		03DF19181DE1BA8E0000AF56 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemCollectionViewCell.swift; path = SmartDeli/ItemCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		03DF19191DE1BA8E0000AF56 /* BeefTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeefTableViewCell.swift; path = SmartDeli/BeefTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		03DF191A1DE1BA8E0000AF56 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SmartDeli/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -119,6 +119,7 @@
 				03DF19051DE1BA8E0000AF56 /* Assets.xcassets */,
 				03DF19061DE1BA8E0000AF56 /* Info.plist */,
 				03DF19071DE1BA8E0000AF56 /* order.swift */,
+				037BAC761DE9F9640037049F /* FirstViewController.swift */,
 				03DF19081DE1BA8E0000AF56 /* NewItemDetailView.swift */,
 				03DF19091DE1BA8E0000AF56 /* HomeViewController.swift */,
 				03DF190A1DE1BA8E0000AF56 /* ItemCollectionViewController.swift */,
@@ -134,7 +135,6 @@
 				03DF19141DE1BA8E0000AF56 /* orderTableViewCell.swift */,
 				03DF19151DE1BA8E0000AF56 /* RegistrationViewController.swift */,
 				03DF19161DE1BA8E0000AF56 /* Registration.swift */,
-				03DF19171DE1BA8E0000AF56 /* FirstViewController.swift */,
 				03DF19181DE1BA8E0000AF56 /* ItemCollectionViewCell.swift */,
 				03DF19191DE1BA8E0000AF56 /* BeefTableViewCell.swift */,
 				03DF191A1DE1BA8E0000AF56 /* AppDelegate.swift */,
@@ -292,7 +292,6 @@
 				03DF19331DE1BA8E0000AF56 /* SecondViewController.swift in Sources */,
 				03DF19261DE1BA8E0000AF56 /* Inventory.swift in Sources */,
 				03DF19321DE1BA8E0000AF56 /* AppDelegate.swift in Sources */,
-				03DF192F1DE1BA8E0000AF56 /* FirstViewController.swift in Sources */,
 				03DF192A1DE1BA8E0000AF56 /* CheeseViewController.swift in Sources */,
 				03DF19251DE1BA8E0000AF56 /* orderViewConroller.swift in Sources */,
 				03DF192D1DE1BA8E0000AF56 /* RegistrationViewController.swift in Sources */,
@@ -301,6 +300,7 @@
 				03DF191F1DE1BA8E0000AF56 /* order.swift in Sources */,
 				03DF19291DE1BA8E0000AF56 /* FishViewController.swift in Sources */,
 				03DF19221DE1BA8E0000AF56 /* ItemCollectionViewController.swift in Sources */,
+				037BAC771DE9F9640037049F /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

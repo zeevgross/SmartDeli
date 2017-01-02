@@ -8,7 +8,7 @@
 
 import UIKit
 
-var store = storeInventory(name: "Rishon", id: 123)
+//var store = storeInventory(name: "Rishon", id: 123)
 
 class ItemCollectionViewController : UICollectionViewController {
     

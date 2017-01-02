@@ -9,21 +9,7 @@
 //import Foundation
 import UIKit
 
-
-struct orderId
-{
-    var deliName: String
-    var orderNum: String
-    
-    init()
-    {
-        deliName = ""
-        orderNum = ""
-    }
-}
-
-
-struct orderRsponse
+struct orderData
 {
     var deliName: String
     var orderNum: String
@@ -71,9 +57,11 @@ class CustomerOrder :NSObject  {
     var customerMail: String
     var storeName: String
     var deliOrders = [DeliOrder]()
-    var orderTracking = [orderRsponse] ()
-    var orderResponseTest = [orderId] ()
+    var orderTracking = [orderData] ()
     var storeId: Int
+
+    var newOrder = [String]()
+    var index: Int
     
     // MARK: Initialization
     
@@ -82,20 +70,20 @@ class CustomerOrder :NSObject  {
         self.customerMail = mail
         self.storeName = store
         self.storeId = 555
+        self.index = 0
         super.init()
         
         // Initialization should fail if there is no email address
         if mail.isEmpty {
             return nil
         }
-        debugFill()
         buildDelies()
         
     }
     
     func buildDelies(){
         
-        let deliNames = ["Beef","Cheese","Poultry","Fish"]
+        let deliNames = ["Beef","Cheese","Fish","Poultry"]
         var deli:DeliOrder
         
         let size = deliNames.count
@@ -107,22 +95,6 @@ class CustomerOrder :NSObject  {
         }
         
     }
-    
-    
-    
-    func debugFill(){
-        
-        var ord = orderId()
-        
-        ord.deliName = "Beef"
-        ord.orderNum = "1234"
-        orderResponseTest.append (ord)
-
-        ord.deliName = "Fish"
-        ord.orderNum = "5678"
-        orderResponseTest.append (ord)
-    }
-
     
     func getItemsArray (name: String) -> [productItem]{
         
@@ -154,128 +126,16 @@ class CustomerOrder :NSObject  {
         return 0
     }
 
-   /*
-    struct tmpProduct {
-        var name: String
-        var photo: UIImage?
-        var quantity: String
-        var weight: String
-        var comment: String
-        var helpNeeded: Bool
-
-    }
-    */
-    
     func appendItem(deliName :String, item: productItem){
         
         let myTmp = item
-    /*
-        myTmp.name = item.name
-        myTmp.photo = item.photo
-        myTmp.quantity = item.quantity
-        myTmp.weight = item.weight
-        myTmp.comment = item.comment
-        myTmp.helpNeeded = item.helpNeeded
-    */
         for i in 0..<deliOrders.count {
             if deliOrders[i].deliName == deliName{
                     deliOrders[i].items.append(myTmp)
-      /*
-                let size = deliOrders[i].items.count
-                let index = size - 1
-                
-                deliOrders[i].items[index].name = name
-                deliOrders[i].items[index].photo = photo
-                deliOrders[i].items[index].quantity = quantity
-                deliOrders[i].items[index].weight = weight
-                deliOrders[i].items[index].comment = comment
-                deliOrders[i].items[index].helpNeeded = helpNeeded
-       */
             }
         }
     }
    
-    func pollOrderStatusRequest(orderList: [orderId]){
-        
-        var itemDictionary: NSDictionary = [
-            "deliName":"",
-            "orderId":""
-        ]
-        let orderpoll: NSMutableArray = []
-        
-        // load items into array with the order ID values
-        
-        let size = orderList.count
-        for i in 0 ..< size
-        {
- 
-            itemDictionary = [
-                "deliName":orderList[i].deliName,
-                "orderId":String(orderList[i].orderNum)
-            ]
-            orderpoll.addObject(itemDictionary)
-        }
-        
-        let queryOrder: NSDictionary = [
-            "custofmer":"zeev.gross.work@gmail.com",
-            "store":"1234",
-            "deliOrder": orderpoll
-        ]
-        
-        
-        // buld JSON from array
-        
-        
-        if NSJSONSerialization.isValidJSONObject(queryOrder) {
-            do{
-                
-                let data = try NSJSONSerialization.dataWithJSONObject(queryOrder, options: NSJSONWritingOptions.PrettyPrinted)
-                if let myString = NSString(data: data, encoding: NSUTF8StringEncoding) {
-                    print (myString)
-                    sentToNet(data)
-                }
-            }
-            catch{
-                print ("error in NSJSONSerialization")
-            }
-        }
-       
-    }
-    
-    func sentToNet1(jsonData: NSData){
-        
-        do {
-            let url = NSURL(string: "http://echo.jsontest.com/key/value/one/two")!
-            let request = NSMutableURLRequest(URL: url)
-            request.HTTPMethod = "POST"
-            
-            // insert json data to the request
-            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-            request.HTTPBody = jsonData
-            
-            //print ("Request -> \(request)")
-            
-            let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ data, response, error in
-                if error != nil{
-                    print("Error -> \(error)")
-                    return
-                }
-                
-                do {
-                    let result = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [String:AnyObject]
-                    
-                    print("Result -> \(result)")
-                    
-                } catch {
-                    print("Catch Error -> \(error)")
-                }
-            }
-            
-            task.resume()
-            //  return task
-        }
-    }
- 
     
     func checkCustomer( mail: String) -> Bool
     {
@@ -314,10 +174,10 @@ class CustomerOrder :NSObject  {
         var id:Int
         
         switch name{
-            case  "Beef": id=1
-            case  "Cheese": id=2
-            case  "Fish": id=3
-            case  "Poultry": id=4
+            case  "Beef"    : id=1
+            case  "Cheese"  : id=2
+            case  "Fish"    : id=3
+            case  "Poultry" : id=4
         default:
             id = 0
         }
@@ -344,252 +204,270 @@ class CustomerOrder :NSObject  {
      **  import order status in JSON format for all delies
      */
 
-    
-    func handleNewResponse ()
+    func getOrderFromServer ()
     {
         var found: Bool = false
-        var orderId: String
-        var new: Bool = false
-       // var item =  productItem(name: "stam", photo: nil, quantity: "0",weight: "0", comment: "", helpNeeded: false)
+        var orderId: String = ""
+        var newItem: Bool = false
+        var tmpDeliResponse =  orderData()
+        var tmpItem =  productItem()
+        var  tmpDeliName: String = ""
         
-        var tmpDeliResponse =  orderRsponse()
-        var item =  productItem()
+        let orderSemaphore = dispatch_semaphore_create(0)
         
+        let url = NSURL(string: "http://192.168.1.103:8080/api/v1/orders?customer=1&served=0")!
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "GET"
         
-        //item  productItem(name: "stam", photo: nil, quantity: "0",weight: "0", comment: "", helpNeeded: false)!
-        
-        if let asset = NSDataAsset(name: "status", bundle: NSBundle.mainBundle()){
-        
-        do {
-            let result = try NSJSONSerialization.JSONObjectWithData(asset.data, options: []) as? [String:AnyObject]
-            
-            
-            guard let Store = result!["store"] as? [String:AnyObject]
-                else{
-                    return
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ data, response, error in
+            if error != nil{
+                print("Error -> \(error)")
+                return
             }
-            
-            guard let tmpStore = Store["name"] as? String
-                else{
-                    return
-            }
-            storeName = tmpStore
-            
-            guard let tmpStoreId = Store["id"] as? Int
-                else{
-                    return
-            }
-            storeId = tmpStoreId
-            
-            guard let deliesArray = Store["delies"] as? [AnyObject]
-                else{
-                    return
-                }
-            
-            for i in 0..<deliesArray.count
-            {
-                guard let deli = deliesArray[i] as? [String:AnyObject]
-                    else{
-                        return
-                }
-               
-                // Process Deli Order
-                
-                let deliOrderId:Int = (deli["id"] as? Int)!
-                let tmpDeliName = deliId2Name((deli["deliId"] as? Int)!)
-                orderId = String(deliOrderId)
-
-                for j in 0..<orderTracking.count
+            do {
+                if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [AnyObject]
                 {
-                    if (orderTracking[j].orderNum == orderId){
-                        found = true
-                        print ("updated")
-                        
-                        // Update fields
-                        orderTracking[j].estimedTime = (deli["eta"] as? String)!
-                        orderTracking[j].startTime = (deli["created"] as? String)!
-                        new = false
-                    }
-                }
-                
-                if found == false{
-                    
-                    // Add new entry
-                    
-                    tmpDeliResponse.orderNum = orderId
-                    tmpDeliResponse.deliName = tmpDeliName
-                    tmpDeliResponse.estimedTime = (deli["eta"] as? String)!
-                    tmpDeliResponse.startTime = (deli["created"] as? String)!
-                    orderTracking.append(tmpDeliResponse)
-                    
-                    new = true
-                }
-
-                
-                // process items (not required !!)
-                
-                guard let items = deli["items"] as? [AnyObject]
-                    else{
-                        return
-                }
-                
-                for j in 0..<items.count
-                {
-                   
-                    guard let tmpItems = items[j] as? [String:AnyObject]
-                        else{
-                            return
-                    }
-
-                    
-                    
-                    if new == true  {
-
-                        guard   let tmpComment = tmpItems["comments"] as? String
+                    let orderCount = jsonResult.count
+                    for idx in 0..<orderCount{
+                        guard let order = jsonResult[idx] as? [String:AnyObject]
                             else{
                                 return
                         }
-                        item.comment  = tmpComment
-                      
-                        if tmpItems.indexForKey("quantity") != nil {
-                            // the key exists in the dictionary
-                            
-                            guard   let tmpQuantity = tmpItems["quantity"] as? Int
-                                else{
-                                    return
-                            }
-                            item.quantity   = String(tmpQuantity)
-                        }
                         
-                        if tmpItems.indexForKey("weight") != nil {
-                            // the key exists in the dictionary
-                            
-                            guard   let tmpWeight = (tmpItems["weight"]) as? Double
-                                else{
-                                    return
-                            }
-                            item.weight   = String(tmpWeight)
-                        }
-
-                        item.helpNeeded = (String(tmpItems["helpNeeded"]) == "true")
+                        let orderIdint = (order["orderId"] as? Int)!
+                        orderId = String(orderIdint)
                         
-                        guard let product = tmpItems["product"] as? [String:AnyObject]
+                        guard let deli = order["deli"] as? [String:AnyObject]
                             else{
                                 return
                         }
-                        let tmpName = (product["name"] as? String)!
+                        let deliId = (deli["deliId"] as? Int)!
+                        tmpDeliName = self.deliId2Name(deliId)
+                        newItem = false
+                        for j in 0..<self.orderTracking.count{
+                            
+                            if (self.orderTracking[j].orderNum == orderId){
+                                found = true
+                                print ("updated")
+                                
+                                self.orderTracking[j].estimedTime = (order["eta"] as? String)!
+                                self.orderTracking[j].startTime = (order["created"] as? String)!
+                                self.updateNewOrder(orderId)
+                                newItem = false
+                            }
                         
-                        item.name = (product["name"] as? String)!
-                        item.photo = store!.getPhoto (tmpDeliName, item: tmpName)
-                    
-                        appendItem(tmpDeliName, item: item)
-                    
-                    }
-                    else{
-                        deliOrders[i].items[j].quantity   = String(tmpItems["quantity"])
-                        deliOrders[i].items[j].weight     = String(tmpItems["weight"])
-                        deliOrders[i].items[j].comment    = String(tmpItems["comment"])
-                        deliOrders[i].items[j].helpNeeded = (String(tmpItems["helpNeeded"]) == "true")
-                    }
+                        }
+                        if found == false{
+                            tmpDeliResponse.orderNum = orderId
+                            tmpDeliResponse.deliName = tmpDeliName
+                            tmpDeliResponse.estimedTime = (order["eta"] as? String)!
+                            tmpDeliResponse.startTime = (order["created"] as? String)!
+                            self.orderTracking.append(tmpDeliResponse)
+                            self.updateNewOrder(orderId)
+                            newItem = true
+                        
+                        }
+                        
+                        found = false
+                        
+                        // Process order Items
+                        
+                        if newItem{
+                        
+                            guard let items = order["OrderItem"] as? [AnyObject]
+                                else{
+                                    return
+                            }
+                            for j in 0..<items.count
+                            {
+                                guard let tmpItems = items[j] as? [String:AnyObject]
+                                    else{
+                                        return
+                                }
+                                if tmpItems.indexForKey("comments") != nil {
+                                    // the key exists in the dictionary
+                                    
+                                    guard   let tmpComment = tmpItems["comments"] as? String
+                                        else{
+                                            break                                        //return
+                                    }
+                                    tmpItem.comment  = tmpComment
+                                }
+                                else{
+                                    tmpItem.comment = "" // provide empty sting if null
+                                }
+                                
+                                
+                                
+                                
+                                if tmpItems.indexForKey("quantity") != nil {
+                                    // the key exists in the dictionary
+                                    
+                                        guard   let tmpQuantity = tmpItems["quantity"] as? Int
+                                        else{
+                                            return
+                                    }
+                                    tmpItem.quantity   = String(tmpQuantity)
+                                }
+                                else{
+                                    tmpItem.quantity   = ""
+                                }
+                                    
+                                    
+                                if tmpItems.indexForKey("weight") != nil {
+                                    // the key exists in the dictionary
+                                    
+                                    guard   let tmpWeight = (tmpItems["weight"]) as? Double
+                                        else{
+                                            return
+                                    }
+                                    tmpItem.weight   = String(tmpWeight)
+                                }
+                                else{
+                                    tmpItem.weight   = ""
+                                }
+
+                                tmpItem.helpNeeded = (String(tmpItems["helpNeeded"]) == "true")
+                                guard let product = tmpItems["product"] as? [String:AnyObject]
+                                    else{
+                                        return
+                                }
+                                let tmpName = (product["productName"] as? String)!
+                                
+                                tmpItem.name = tmpName
+                                tmpItem.photo = store!.getPhoto (tmpDeliName, item: tmpName)
+                                
+                                tmpItem.orderNum = orderId
+                                
+                                
+                                self.appendItem(tmpDeliName, item: tmpItem)
+                                print ("added item \(orderId)")
+                                
+                                
+                            }
+                        }
+                        newItem = false    
+                    } // end for idx
+                } //end if
+                else{
+                    print ("error in response")
                 }
+            } //end do
+            catch let error as NSError {
+                print(error.localizedDescription)
             }
+            dispatch_semaphore_signal(orderSemaphore)
+            print ("YYYY")
         }
-            catch {
-                print("Catch Error -> ")
-        }
-        }
-     }
-
-
+        
+        task.resume()
+        
+        print("before swm wait")
+        if (dispatch_semaphore_wait(orderSemaphore, DISPATCH_TIME_FOREVER) != 0){
+            print ("semaphore timedout with error")
+        }//DISPATCH_TIME_FOREVER)
+        
+        
+        // Perform cleanup on processed orders. 
+        // orderId was not in the server reply and not empty
+        
+        orderRepositiryClean()
+        
+        
+        print ("order load complete")
+        //  return task
+    }
     /*
     **  Build order in JSON format for all delies
     */
     
-    func buldJsonOrder(){
+    func buldJsonOrder(deliId: Int) -> NSData{
 
-        var storeDict = [String:AnyObject]()
         var orderDict = [String:AnyObject]()
-        var deliArray = [AnyObject]()
-        var deliDict = [String:AnyObject]()
         var itemArray = [AnyObject]()
         var itemElement = [String:AnyObject]()
         var productInfo = [String:AnyObject]()
-        var  quantity: Int?
+        var quantity: Int?
         var quantuityStr: String
         var weight : Double
         var weightStr :String
+        var deliDict = [String:AnyObject]()
+        var customerDict = [String:AnyObject]()
         
-        for i in 0..<deliOrders.count{
-            
-            for j in 0..<deliOrders[i].items.count{
+        var data: NSData? = nil
+        
+        
+            for j in 0..<deliOrders[deliId].items.count{
                 
-                quantuityStr = deliOrders[i].items[j].quantity
-                if (!quantuityStr.isEmpty)
-                {
-                    quantity = Int(quantuityStr)!
-                    itemElement["quantity"] = quantity
+                // build OrderItem
+                
+                if (deliOrders[deliId].items[j].orderNum == "") {
+                    
+                    // Add only new items (empty orderNum)
+                
+                    quantuityStr = deliOrders[deliId].items[j].quantity
+                    if (!quantuityStr.isEmpty)
+                    {
+                        quantity = Int(quantuityStr)!
+                        itemElement["quantity"] = quantity
+                    }
+                    weightStr = deliOrders[deliId].items[j].weight
+                    if (!weightStr.isEmpty)
+                    {
+                        weight = Double(weightStr)!
+                        itemElement["weight"] = weight
+                    }
+                    itemElement["comments"] = deliOrders[deliId].items[j].comment
+                    itemElement["helpRequired"] = Bool(deliOrders[deliId].items[j].helpNeeded)
+                    
+                    productInfo["productId"] = store!.getItemId(deliOrders[deliId].deliName,item: deliOrders[deliId].items[j].name)
+                    itemElement["product"] = productInfo
+                    
+                    itemArray.append(itemElement)
+                    
                 }
-                
-                weightStr = deliOrders[i].items[j].weight
-                if (!weightStr.isEmpty)
-                {
-                    weight = Double(weightStr)!
-                    itemElement["weight"] = weight
-                }
-
-                itemElement["comments"] = deliOrders[i].items[j].comment
-                itemElement["helpRequired"] = Bool(deliOrders[i].items[j].helpNeeded)
-                productInfo["id"] = store!.getItemId(deliOrders[i].deliName,item: deliOrders[i].items[j].name)
-                productInfo["name"] = deliOrders[i].items[j].name
-                itemElement["product"] = productInfo
-                
-                itemArray.append(itemElement)
             }
-            deliDict["deliName"] = deliOrders[i].deliName
-            deliDict["deliId"] =  deliName2Id(deliOrders[i].deliName)
-            deliDict["items"] = itemArray
+        
+       
+        
             
-            deliDict["created"] =  "29-10-2016 10:50:00"
-                        
-            deliArray.append(deliDict)
+            deliDict["deliId"] = deliName2Id(deliOrders[deliId].deliName)
+            orderDict["deli"] = deliDict
+        
+            orderDict["OrderItem"] = itemArray
             itemArray.removeAll()
+        
+            customerDict["customerId"] = 1
+            orderDict["customers"] = customerDict
             
-        }
         
-        orderDict["name"] = "Rishon"
-        orderDict["id"] = 3
-        orderDict["delies"] = deliArray
+            // buld JSON from array
         
         
-        storeDict["store"] = orderDict
-        
-        // buld JSON from array
-        
-        
-        if NSJSONSerialization.isValidJSONObject(storeDict) {
-            do{
-                
-                let data = try NSJSONSerialization.dataWithJSONObject(storeDict, options: NSJSONWritingOptions.PrettyPrinted)
-                if let myString = NSString(data: data, encoding: NSUTF8StringEncoding) {
-                    print (myString)
-              //      sentToNet(data)
+            if NSJSONSerialization.isValidJSONObject(orderDict) {
+                do{
+                    
+                    data = try NSJSONSerialization.dataWithJSONObject(orderDict, options: NSJSONWritingOptions.PrettyPrinted)
+                    if let myString = NSString(data: data!, encoding: NSUTF8StringEncoding) {
+                        print (myString)
+                  //      sentToNet(data)
+                    }
+                }
+                catch{
+                    print ("error in NSJSONSerialization")
                 }
             }
-            catch{
-                print ("error in NSJSONSerialization")
-            }
-        }
+        
+        
+        return data!
     }
     
-    func sentToNet(jsonData: NSData){
+    func sendOrder(jsonData: NSData){
         
         do {
-            
-            //      let jsonData = try NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
-            
             // create post request
-            //            let url = NSURL(string: "http://192.168.1.149/zeev.html")!
-            let url = NSURL(string: "http://echo.jsontest.com/key/value/one/two")!
+            let url = NSURL(string: "http://192.168.1.103:8080/api/v1/orders?customer=1")!
             let request = NSMutableURLRequest(URL: url)
             request.HTTPMethod = "POST"
             
@@ -604,9 +482,9 @@ class CustomerOrder :NSObject  {
                 }
                 
                 do {
-                    let result = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [String:AnyObject]
+                    _ = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [String:AnyObject]
                     
-                    print("Result -> \(result)")
+                    print("order added")
                     
                 } catch {
                     print("Catch Error -> \(error)")
@@ -620,41 +498,94 @@ class CustomerOrder :NSObject  {
             
         }
     }
-
     
+    func updateNewOrder(orderId: String){
+        newOrder.append(orderId)
+    }
     
-    func sendGetCustomerOrder(customerId: Int64)
-    {
-        let urlStr = "http://84.94.180.127:8080/api/v1/orders?customer=" + String(customerId)
-        
-        let url = NSURL(string: urlStr)!
-        let request = NSMutableURLRequest(URL: url)
-        request.HTTPMethod = "POST"
-        
-        // insert json data to the request
-        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ data, response, error in
-            if error != nil{
-                print("Error -> \(error)")
-                return
-            }
-            
-            do {
-                let result = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [String:AnyObject]
-                
-                print("Result -> \(result)")
-                
-            } catch {
-                print("Catch Error -> \(error)")
+    func findInNewOrder(orderId: String) -> Bool {
+        for i in 0..<newOrder.count{
+            if newOrder[i] == orderId{
+                return true
             }
         }
+        return false
+    }
+    
+    func orderRepositiryClean(){
         
-        task.resume()
-        //  return task
+        //var toRemove = [Int](count: 100, repeatedValue: 0)
+        var removeOrderCount = 0
+        var removeItemCount = 0
+        var i: Int
+        var j: Int
         
+        i = 0
+        while i < (orderTracking.count - removeOrderCount){
+            if !findInNewOrder(orderTracking[i].orderNum){
+                
+                //remove order
+                
+                removeItemCount = 0
+                let deliId: Int = deliName2Id(orderTracking[i].deliName) - 1
+                j = 0
+                while j < (deliOrders[deliId].items.count - removeItemCount){
+                    if (deliOrders[deliId].items[j].orderNum == orderTracking[i].orderNum) {
+                        deliOrders[deliId].items.removeAtIndex(j)
+                        removeItemCount += 1
+                    }
+                    else{
+                        j += 1
+                    }
+                }
+                print("removed oreder \(orderTracking[i].orderNum)")
+                orderTracking.removeAtIndex(i)
+                removeOrderCount += 1
+            }
+            else{
+                i += 1
+            }
+        }
+        newOrder.removeAll()
+    }
+    
+    func orderRepositiryCleanNew(){
+        
+        var removeItemCount = 0
+        var j: Int
+        
+        for i in 0..<deliOrders.count{
+            
+            removeItemCount = 0
+            j = 0
+            while j < (deliOrders[i].items.count - removeItemCount){
+                if ((deliOrders[i].items[j].orderNum == "")){
+                    
+                    print("removed new item from \(deliOrders[i].items[j].name)")
+                    deliOrders[i].items.removeAtIndex(j)
+                    removeItemCount += 1
+                }
+                else{
+                    j += 1
+                }
+            }
+           
+        }
     }
 
+    
+    func checkNewItems(deliIdx: Int) -> Bool{
+        
+        var ret: Bool = false
+        
+        for i in 0..<deliOrders[deliIdx].items.count{
+            if deliOrders[deliIdx].items[i].orderNum == "" {
+                ret = true
+                break
+            }
+        }
+        return ret
+    }
 }
 
 

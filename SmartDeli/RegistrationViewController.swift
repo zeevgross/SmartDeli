@@ -119,37 +119,75 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                 print ("Register button pressed")
                 if (!user!.validateUser()){
                     print ("Error in user fields")
+                    return
                 }
             
             
                 // Build JSON object 
             
                 let regDictionary: NSDictionary = [
-                    "firstName" :   firstName.text!,
-                    "lastName":     lastName.text!,
-                    "birthDate" :   birthDate.text!,
-                    "userName" :    userName.text!,
-                    "mailAddr":     mailAddr.text!,
+                    "first_name" :  firstName.text!,
+                    "last_name":    lastName.text!,
+                    "birth_date" :  birthDate.text!,
+                    "username" :    userName.text!,
+                    "email":        mailAddr.text!
+                    /*,
                     "password":     password.text!,
-                    "passwordCopy": passwordCopy.text!
+                    "passwordCopy": passwordCopy.text! */
                 ]
             
             
                 if NSJSONSerialization.isValidJSONObject(regDictionary) {
                  
                     do{
-                        
-                    let data = try NSJSONSerialization.dataWithJSONObject(regDictionary, options: NSJSONWritingOptions.PrettyPrinted)
-                        if let myString = NSString(data: data, encoding: NSUTF8StringEncoding) {
-                            print (myString)
+                      
+                        let data = try NSJSONSerialization.dataWithJSONObject(regDictionary, options: NSJSONWritingOptions.PrettyPrinted)
+                            if let myString = NSString(data: data, encoding: NSUTF8StringEncoding) {
+                                print (myString)
+                                sendToServer(data)
                         }
                     }
-                   catch{
+                    catch{
                             print ("error in NSJSONSerialization")
-                        }
                     }
-                    
                 }
-            
+                    
+            }
     }
+    
+    
+    
+    func sendToServer(jsonData: NSData){
+        
+        do {
+            let url = NSURL(string: "http://192.168.1.103:8080/api/v1/customers")!
+            let request = NSMutableURLRequest(URL: url)
+            request.HTTPMethod = "POST"
+            
+            // insert json data to the request
+            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+            request.HTTPBody = jsonData
+            
+            //print ("Request -> \(request)")
+            
+            let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ data, response, error in
+                if error != nil{
+                    print("Error -> \(error)")
+                    return
+                }
+                do {
+                    let result = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [String:AnyObject]
+                    
+                    print("Result -> \(result)")
+                    
+                } catch {
+                    print("Catch Error -> \(error)")
+                }
+            }
+            
+            task.resume()
+            //  return task
+        }
+    }
+
 }

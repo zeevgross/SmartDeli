@@ -8,7 +8,7 @@
         "id":111,
         "items" : [
           {
-            "weight" : 500,
+            "weight" : 1.500,
             "helpRequired" : false,
             "product" : {
               "id" : 3,
@@ -28,7 +28,7 @@
         "id":222,
         "items" : [
           {
-            "weight" : 600,
+            "weight" : 1.600,
             "helpRequired" : false,
             "product" : {
               "id" : 3,
@@ -38,7 +38,7 @@
             "comments" : ""
           },
           {
-            "weight" : 400,
+            "weight" : 1.400,
             "helpRequired" : false,
             "product" : {
               "id" : 3,
@@ -62,7 +62,7 @@
             "helpRequired" : false,
             "product" : {
               "id" : 3,
-              "name" : "Ckicken Breast"
+              "name" : "Chicken Breast"
             },
             "quantity" : 4,
             "comments" : "Leave uncut just clean"

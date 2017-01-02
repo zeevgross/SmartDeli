@@ -9,6 +9,15 @@
          contextName = "storeInventory.loadDeliItems() -&gt; ():Inventory.swift">
       </ContextState>
       <ContextState
+         contextName = "CustomerOrder.orderRepositiryClean() -&gt; ():order.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CustomerOrder.orderRepositiryClean(Bool) -&gt; ():order.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DeliViewController.viewDidAppear(Bool) -&gt; ():DeliViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "CustomerOrder.buldJsonOrder() -&gt; ():order.swift">
          <PersistentStrings>
             <PersistentString
@@ -20,13 +29,25 @@
          contextName = "DeliViewController.viewDidLoad() -&gt; ():DeliViewController.swift">
       </ContextState>
       <ContextState
+         contextName = "orderViewController.tableView(UITableView, cellForRowAtIndexPath : NSIndexPath) -&gt; UITableViewCell:orderViewConroller.swift">
+      </ContextState>
+      <ContextState
          contextName = "CustomerOrder.appendItem(String, item : productItem) -&gt; ():order.swift">
       </ContextState>
       <ContextState
          contextName = "storeInventory.init(name : String, id : Int) -&gt; storeInventory?:Inventory.swift">
       </ContextState>
       <ContextState
-         contextName = "orderViewController.tableView(UITableView, cellForRowAtIndexPath : NSIndexPath) -&gt; UITableViewCell:orderViewConroller.swift">
+         contextName = "ItemCollectionViewController.beefInventoryLoad() -&gt; ():ItemCollectionViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DeliViewController.prepareForSegue(UIStoryboardSegue, sender : AnyObject?) -&gt; ():DeliViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ItemCollectionViewController.viewDidLoad() -&gt; ():ItemCollectionViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CustomerOrder.buildDelies() -&gt; ():order.swift">
       </ContextState>
       <ContextState
          contextName = "DeliViewController.unwindToItemList(UIStoryboardSegue) -&gt; ():DeliViewController.swift">
@@ -37,22 +58,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ItemCollectionViewController.beefInventoryLoad() -&gt; ():ItemCollectionViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "ItemCollectionViewController.viewDidLoad() -&gt; ():ItemCollectionViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "CustomerOrder.buildDelies() -&gt; ():order.swift">
-      </ContextState>
-      <ContextState
-         contextName = "DeliViewController.prepareForSegue(UIStoryboardSegue, sender : AnyObject?) -&gt; ():DeliViewController.swift">
-      </ContextState>
-      <ContextState
          contextName = "CustomerOrder.getItemsArrayIndex(String) -&gt; Int:order.swift">
       </ContextState>
       <ContextState
+         contextName = "CustomerOrder.(getOrderFromServer() -&gt; ()).(closure #1):order.swift">
+      </ContextState>
+      <ContextState
          contextName = "DeliViewController.tableView(UITableView, cellForRowAtIndexPath : NSIndexPath) -&gt; UITableViewCell:DeliViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "order">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CustomerOrder.getOrderFromServer() -&gt; ():order.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

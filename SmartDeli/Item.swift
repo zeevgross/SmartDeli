@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/*
 struct produceKey{
     static let nameKey: String = "name"
     static let photoKey: String = "photo"
@@ -16,7 +16,7 @@ struct produceKey{
     static let commentKey: String = "comment"
     static let helpNeededKey: String = "helpNeeded"
 }
-
+*/
 struct productItem  {
     
     // MARK: Properties
@@ -27,6 +27,7 @@ struct productItem  {
     var weight: String = ""
     var comment: String = ""
     var helpNeeded: Bool = false
+    var orderNum: String = ""
 }
 
 

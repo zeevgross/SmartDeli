@@ -25,12 +25,12 @@ class DeliViewController: UITableViewController {
         navigationItem.leftBarButtonItem = editButtonItem()
         
         
-        //TODO - change to current order
-       /*
-        if let savedItemss = loadItems() {
-            productItems += savedItemss
-        }
-      */
+    }
+    
+    override  func viewDidAppear(animated: Bool) {
+        
+        tableView.reloadData()
+        super.viewDidAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {

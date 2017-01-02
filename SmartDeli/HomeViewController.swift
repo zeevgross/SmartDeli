@@ -17,24 +17,27 @@ class HomeViewController: UIViewController {
     @IBAction func updateStatus(sender: AnyObject) {
         print ("update pressed")
         
-        //order!.handleNewResponse()
+        var data: NSData
         
-        
-        order!.buldJsonOrder()
-        
-       // pollOrder()
-        
-        // Start Timer
-        /*
-        if timerUsed{
-            pollTimer.invalidate()
-            timerUsed = false
+        for i in 0..<4{
+            
+           
+            if ((order!.getItemsCount(order!.deliId2Name(i+1)) > 0) && (order!.checkNewItems(i))) {
+                data = order!.buldJsonOrder(i)
+                if order != nil {
+                    order!.sendOrder(data)
+                }
+            }
         }
-        else{
-            pollTimer = NSTimer.scheduledTimerWithTimeInterval(5, target:self, selector: #selector(HomeViewController.pollOrder), userInfo: nil, repeats: true)
-            timerUsed = true
-        }
-         */
+        
+        order!.orderRepositiryCleanNew()
+        
+        let triggerTime = (Int64(NSEC_PER_SEC) * 1)
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, triggerTime), dispatch_get_main_queue(), { () -> Void in
+            order!.getOrderFromServer()
+        })
+        
+        
     }
     
     override func viewDidLoad() {
@@ -54,8 +57,8 @@ class HomeViewController: UIViewController {
     func pollOrder(){
         
     
-        //order!.pollOrderStatusRequest(order!.orderResponseTest)
-        order!.handleNewResponse()
+        
+        order!.getOrderFromServer()
     
     }
     

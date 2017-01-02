@@ -21,26 +21,33 @@ class storeInventory : NSObject
         
         super.init()
         
-        // Load any saved meals, otherwise load sample data.
+        if name.isEmpty {
+            return nil
+        }
+    }
+    
+    
+    func loadStoreinventory()
+    {
+    
         if let savedPhotos = loadPhotos() {
             photoCache += savedPhotos
         }
         else {
             
             // Load the sample data.
-           print ("Cache empty")
+            print ("Cache empty")
         }
-
+        
         loadDeliItems()
         
         if cacheUpdated {
             savePhotos()
         }
-    
-        if name.isEmpty {
-            return nil
-        }
+
     }
+    
+    
     
     //let json = try? NSJSONSerialization.JSONObjectWithData(asset!.data, options: NSJSONReadingOptions.AllowFragments)
     
@@ -48,63 +55,91 @@ class storeInventory : NSObject
     func loadDeliItems()
     {
         
-        var tmpDeli: deliInventory
+       // if let asset = NSDataAsset(name: "inventory", bundle: NSBundle.mainBundle()){
         
         
-        if let asset = NSDataAsset(name: "inventory", bundle: NSBundle.mainBundle()){
-            do {
+            let semaphore = dispatch_semaphore_create(0)
+        
+            let url = NSURL(string: "http://192.168.1.103:8080/api/v1/stores/")!
+            let request = NSMutableURLRequest(URL: url)
+            request.HTTPMethod = "GET"
+            
+            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+            let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ data, response, error in
+                if error != nil{
+                    print("Error -> \(error)")
+                    return
+                }
                 
-                if let jsonResult = try NSJSONSerialization.JSONObjectWithData(asset.data, options: []) as? [AnyObject]
-                {
+                do {
+                    //let result = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [String:AnyObject]
                     
-                    let storeCount = jsonResult.count
-                    
-                    for idx in 0..<storeCount
+                    if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [AnyObject]
                     {
-                        guard let store = jsonResult[idx] as? [String:AnyObject]
-                            else{
-                                return
-                        }
                         
-                        guard let delies = store["delies"] as? [AnyObject]
-                            else{
-                                return
-                        }
+                        //let storeCount = jsonResult.count
+                        var tmpDeli: deliInventory
                         
-                        for i in 0..<delies.count
+                        for idx in 0..<1 //storeCount
                         {
-                            let tmpName = (delies[i]["deliName"] as? String)!
-                            let tmpId:Int = (delies[i]["deliId"] as? Int)!
-                         
-                            tmpDeli = deliInventory(name: tmpName, id: tmpId)!
-                            
-                            
-                            guard let items = delies[i]["products"] as? [AnyObject]
+                            guard let store = jsonResult[idx] as? [String:AnyObject]
                                 else{
                                     return
                             }
-                            for j in 0..<items.count
-                            {
-                                
-                                
-                                let tmpItemId:Int = (items[j]["productId"] as? Int)!
-                                let tmpItemName = (items[j]["productName"] as? String)!
-                                let tmpPhotoName = (items[j]["productPhoto"] as? String)!
-                                let tmpPhoto = loadPhoto(tmpPhotoName)
-                                
-                                let item = inventoryItem(itemId: tmpItemId,name:  tmpItemName, photo: tmpPhoto)!
-                                tmpDeli.Items.append(item)
+                            
+                            guard let delies = store["delis"] as? [AnyObject]
+                                else{
+                                    return
                             }
-                            deli.append(tmpDeli)
+                            
+                            for i in 0..<delies.count
+                            {
+                                let tmpName = (delies[i]["deliName"] as? String)!
+                                let tmpId:Int = (delies[i]["deliId"] as? Int)!
+                                
+                                tmpDeli = deliInventory(name: tmpName, id: tmpId)!
+                                
+                                
+                                guard let items = delies[i]["products"] as? [AnyObject]
+                                    else{
+                                        return
+                                }
+                                for j in 0..<items.count
+                                {
+                                    
+                                    
+                                    let tmpItemId:Int = (items[j]["productId"] as? Int)!
+                                    let tmpItemName = (items[j]["productName"] as? String)!
+                                    let tmpPhotoName = (items[j]["productPhoto"] as? String)!
+                                    let tmpPhoto = self.loadPhoto(tmpPhotoName)
+                                    
+                                    let item = inventoryItem(itemId: tmpItemId,name:  tmpItemName, photo: tmpPhoto)!
+                                    tmpDeli.Items.append(item)
+                                }
+                                self.deli.append(tmpDeli)
+                            }
                         }
                     }
+                    else{
+                        print ("error in response")
+                    }
+                } catch let error as NSError {
+                    print(error.localizedDescription)
                 }
-            } catch let error as NSError {
-                print(error.localizedDescription)
+                
+                dispatch_semaphore_signal(semaphore)
+                print ("ZZZZ")
+
             }
-        } else {
-            print("Invalid filename/path.")
-        }
+            
+            task.resume()
+        
+            print("before swm wait")
+        if (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER) != 0){
+            print ("semaphore timedout with error")
+        }//DISPATCH_TIME_FOREVER)
+            print ("inventory load complete")
+            //  return task
     }
     
     
@@ -152,7 +187,8 @@ class storeInventory : NSObject
         
         for i in 0..<photoCache.count{
             if photoCache[i].name == name{
-                return photoCache[i].photo!
+               photoCache[i].ttl = 5
+               return photoCache[i].photo!
             }
         }
         
@@ -175,6 +211,26 @@ class storeInventory : NSObject
         
     }
     
+    
+    /*
+    **  unused photos will be removed if not beeded 5 consecutive time
+    */
+    
+    func photoCacheCleanup() {
+        for i in 0..<photoCache.count{
+            if photoCache[i].ttl == 0{
+                photoCache.removeAtIndex(i)
+                cacheUpdated =  true
+            }
+            else{
+                
+                photoCache[i].ttl -= 1
+                if photoCache[i].ttl < 4{
+                    cacheUpdated =  true
+                }
+            }
+        }
+    }
     
     // MARK: NSCoding
     
@@ -271,3 +327,4 @@ class inventory: NSObject  {
             }
         }
 }
+
